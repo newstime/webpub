@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>http://www.example.com/</loc>
-      <lastmod>2005-01-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-</urlset>
+<publication>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+        <loc>http://www.example.com/</loc>
+        <lastmod>2005-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+   </urlset>
+   <o:Security xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" s:mustUnderstand="1">
+     <u:Timestamp>
+       <u:Created>2012-05-02T18:17:14.467Z</u:Created>
+       <u:Expires>2012-05-02T18:22:14.467Z</u:Expires>
+     </u:Timestamp>
+   </o:Security>
+</publication>
