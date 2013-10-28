@@ -1,6 +1,14 @@
 #! /usr/bin/env ruby
 
 # This signs the xml sitemap file with the provide key.
+#
+# Usage
+#
+#     sign_sitemap <sitemap.xml> <certificate> <private_key>
+#
+# Example
+#
+#     sign_sitemat sitemap.xml.orig cert.pem key.pem > sitemap.xml
 
 require "signer"
 
@@ -12,6 +20,6 @@ signer.document.xpath("//a:urlset", a: "http://www.sitemaps.org/schemas/sitemap/
   signer.digest!(node)
 end
 
-#signer.sign!(:security_token => true)
+signer.sign!(:security_token => true)
 
-#puts signer.to_xml
+puts signer.to_xml
