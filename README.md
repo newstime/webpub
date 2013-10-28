@@ -24,3 +24,8 @@ Create a pass phrase when promoted. For examples included here, it is password.
 
     $ cp server.key server.key.org
     $ openssl rsa -in server.key.org -out server.key
+
+
+4. Generating a Self-Signed Certificate http://www.akadia.com/services/ssh_test_certificate.html
+
+    $ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
