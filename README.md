@@ -29,3 +29,9 @@ Create a pass phrase when promoted. For examples included here, it is password.
 4. Generating a Self-Signed Certificate http://www.akadia.com/services/ssh_test_certificate.html
 
     $ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+### Signing an XML Sitemap
+
+
+    $ cp example_sitemap.xml example_sitemap.xml.org
+    $ bin/sign_sitemap example_sitemap.xml server.crt server.key

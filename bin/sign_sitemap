@@ -1,3 +1,17 @@
 #! /usr/bin/env ruby
 
 # This signs the xml sitemap file with the provide key.
+
+# require "signer"
+
+signer = Signer.new(File.read("example_sitemap.xml"))
+signer.cert = OpenSSL::X509::Certificate.new(File.read("server.crt")) # May need PEM
+signer.private_key = OpenSSL::PKey::RSA.new(File.read("server.key")) # May need PEW, support for passprase, good so the key isn't lost, needs to be encrypted.
+
+signer.document.xpath("//urlset").each do |node|
+  signer.digest!(node)
+end
+
+signer.sign!(:security_token => true)
+
+puts signer.to_xml
