@@ -1,11 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    blankslate (2.1.2.4)
     mini_portile (0.5.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
     signer (1.1.1)
       nokogiri (>= 1.5.1)
+    toml (0.0.4)
+      parslet
     xml_signature (0.1)
       xmlcanonicalizer
     xmlcanonicalizer (0.1.2)
@@ -15,4 +20,5 @@ PLATFORMS
 
 DEPENDENCIES
   signer
+  toml
   xml_signature

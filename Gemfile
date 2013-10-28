@@ -3,3 +3,4 @@ source "https://rubygems.org"
 
 gem "signer"
 gem "xml_signature"
+gem "toml"

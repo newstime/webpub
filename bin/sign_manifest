@@ -10,4 +10,27 @@
 #
 #     sign_manifest credientials/key.pem
 
-exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0]} -keyform PEM > webpub.signature"
+
+# Search up to find the first .webpub
+
+#path = Dir.pwd
+
+#segments = path.split("/")
+
+require "toml"
+
+def find_config(path, name)
+  if File.exists?("#{path}/#{name}")
+    "#{path}/#{name}"
+  else
+    return if path.empty?
+    segments = path.split("/")
+    segments.pop
+    find_config(segments.join("/"), name)
+  end
+end
+
+config_path = find_config(Dir.pwd, '.webpub')
+config = TOML::Parser.new(File.read(config_path)).parsed if config_path
+
+exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0] || config["key"]} -keyform PEM > webpub.signature"
