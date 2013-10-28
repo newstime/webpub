@@ -32,6 +32,5 @@ Create a pass phrase when promoted. For examples included here, it is password.
 
 ### Signing an XML Sitemap
 
-
     $ cp example_sitemap.xml example_sitemap.xml.org
-    $ bin/sign_sitemap example_sitemap.xml server.crt server.key
+    $ bin/sign_sitemap example_sitemap.xml.org cert.pem key.pem > example_sitemap.xml
