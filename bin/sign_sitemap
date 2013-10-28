@@ -12,9 +12,9 @@
 
 require "signer"
 
-signer = Signer.new(File.read(ARGV[1]))
-signer.cert = OpenSSL::X509::Certificate.new(File.read(ARGV[2]))
-signer.private_key = OpenSSL::PKey::RSA.new(File.read(ARGV[3]))
+signer = Signer.new(File.read(ARGV[0]))
+signer.cert = OpenSSL::X509::Certificate.new(File.read(ARGV[1]))
+signer.private_key = OpenSSL::PKey::RSA.new(File.read(ARGV[2]))
 
 signer.document.xpath("//a:urlset", a: "http://www.sitemaps.org/schemas/sitemap/0.9").each do |node|
   signer.digest!(node)
