@@ -1,0 +1,13 @@
+#! /usr/bin/env ruby
+
+# This signs the xml sitemap file with the provide key.
+#
+# Usage
+#
+#     sign_manigest <private_key>
+#
+# Example
+#
+#     sign_manifest credientials/key.pem
+
+exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0]} -keyform PEM > signature"
