@@ -113,3 +113,27 @@ Looks like all I have to do is pass it to openssl like this
 cert.pem: /C=US/ST=CA/L=San Francisco/O=The Independent/OU=Publications/CN=*.theindependent.com/emailAddress=blake@theindependent.com
 error 18 at 0 depth lookup:self signed certificate
 OK
+
+
+### Signing any file
+
+http://stackoverflow.com/questions/10782826/digital-signature-for-a-file-using-openssl
+
+Signing:
+
+    $ openssl dgst -sha256 data.txt > hash
+    $ openssl rsautl -sign -inkey privatekey.pem -keyform PEM -in hash > signature
+
+Verifying:
+
+    $ openssl rsautl -verify -inkey publickey.pem -keyform PEM -in signature
+
+
+Then from the comments:
+
+This might sound obvious for some but: Be aware, rsault verify just decrypts the
+file signature. The output of this call is guaranteed to be produced by the
+owner of the private key, but beside that nothing else is being checked. So to
+actually verify the consistency of data.txt you have to regenerate the digest
+and then compare it against the ouptut of openssl rsautl -verify. –  reto Aug 21
+at 12:54
