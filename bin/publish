@@ -1,3 +1,13 @@
 #! /usr/bin/env ruby
-print `#{File.expand_path("../create_manifest", __FILE__)}`
+#
+# Usage:
+#
+#   publish <url>
+
+unless ARGV[0]
+  print "Pass publication URL as first argument"
+  exit
+end
+
+print `#{File.expand_path("../create_manifest", __FILE__)} #{ARGV[0]}`
 print `#{File.expand_path("../sign_manifest", __FILE__)}`
