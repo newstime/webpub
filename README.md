@@ -1,6 +1,13 @@
 WebPub
 =======
 
+### Round Trip Example
+
+I put instruction to show round trip of manifest generation, signing and
+verfication of manifest and content. Check out round_trip_instructions.md
+
+---
+
 - Build by own crawer in ruby.
   - Would be cool to do this async
 
