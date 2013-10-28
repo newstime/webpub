@@ -1,0 +1,42 @@
+#! /usr/bin/env ruby
+
+# Verifies that the content of the files in the manifest match the manifest
+# hashes. (Verifies the content)
+#
+#
+# Example:
+#
+#    verify_content
+#
+
+require 'digest/sha1'
+
+begin
+  manifest = File.new("webpub.manifest", "r")
+
+  uri = manifest.gets
+  manifest.gets
+
+  while (line = manifest.gets)
+    path, expected = line.strip.split "\t"
+    actual = Digest::SHA1.hexdigest File.read(path)
+    puts "#{expected == actual ? "OK" : "INVAID"}\t#{path}"
+  end
+
+
+  #Dir["**/*"].select(&File.method(:file?)).each do |f|
+
+    ## Ignore webpub manifest and signature files
+    #next if f == "webpub.manifest"
+    #next if f == "webpub.signature"
+
+    #sha1 = Digest::SHA1.hexdigest File.read(f)
+    #manifest.puts "#{f}\t#{sha1}"
+    ## Make sure it's not the manifest file.
+    ## Get the content hash
+    ## Add a line to the file.
+  #end
+
+ensure
+  manifest.close
+end
