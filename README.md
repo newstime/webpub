@@ -85,3 +85,20 @@ trust through a 3 party. The certifate is for deliverying a trusted public key.
 ### Using XMLSec to verify while passing the key
 
     $ xmlsec1 --verify --pubkey-pem pubkey.pem signed.xml
+
+### Extracting the Public Key from a domain
+
+So, we can request the key like this
+
+openssl s_client -connect doximity.com:443 -showcerts
+
+There is also no reason, I can go through verification of the certs my self, and
+just requst the certificate as a pem resource, and then extract the public key
+to use when verifying the xml file, and passing it in to override the embeedd
+one. but it is nice to know the file hasn't been modified. Need to do full
+verification though.
+
+We can extract the key simple by pasteing any certifcate into the ascii armoured
+BEGIN CERTIFICATE... stuff.
+
+This will output a file, that can be passed to xmlsec.
