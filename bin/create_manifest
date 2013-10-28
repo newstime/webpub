@@ -5,12 +5,21 @@
 # Add a line to the manifest file with path and sha1 hash
 
 # Create and/or open webpub.manifest
+#
+# Usage:
+#   Just run in to root of the, filewise, you need the manifest for.
+#
+# Example:
+#
+#    create_manifest http://localhost:3000/2013/10/24
+#
+
 require 'digest/sha1'
 
 begin
   manifest = File.new("webpub.manifest", "w")
 
-  manifest.puts "http://localhost:3000/2013/10/24" # Needs to be passed
+  manifest.puts ARGV[0] # Needs to be passed
   manifest.puts ""
 
   Dir["**/*"].select(&File.method(:file?)).each do |f|
