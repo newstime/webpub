@@ -144,3 +144,21 @@ Looks like can pass our cert straigt in an that works just fine
     # => SHA1(example_sitemap.xml)= 4b3471c42a26046a22e14960be271c59bd0cdbde
 
 Cool, that works out well.
+
+
+### WGET copy an entire website
+
+wget \
+--recursive \
+--level=10 \
+--adjust-extension \
+--convert-links \
+--backup-converted \
+--no-host-directories \
+--page-requisites \
+--timestamping \
+--force-html \
+http://localhost:3001/
+
+You can also specif the output, but this will output it to the local directory.
+Pretty cool. One way to get the site mirrored down.

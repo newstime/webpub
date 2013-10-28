@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+ */
+/* line 21, ../../app/assets/stylesheets/application.css.scss */
+body {
+  background-color: #fff;
+  color: #484c55;
+  font-family: 'Trykker', serif;
+}
+
+/* line 27, ../../app/assets/stylesheets/application.css.scss */
+.headline-style1 {
+  font-size: 19.5pt;
+  margin: 10pt 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Oranienbaum', serif;
+  font-family: 'PT Serif', serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  /*font-family: 'Old Standard TT', serif;*/
+  /*font-family: 'Alike', serif;*/
+  /*font-family: 'Crimson Text', serif;*/
+  /*font-family: 'Arapey', serif;*/
+  /*font-family: 'Libre Baskerville', serif;*/
+  /*text-align: center;*/
+  /*font-style: italic;*/
+}
+
+/* line 46, ../../app/assets/stylesheets/application.css.scss */
+.masthead {
+  text-align: center;
+  display: block;
+  /*border-bottom: 1px solid gray;*/
+  margin: 0 auto;
+  border-top: 0;
+}
+/* line 52, ../../app/assets/stylesheets/application.css.scss */
+.masthead h1 {
+  /*transition: font-size .5s;*/
+}
+
+/* line 57, ../../app/assets/stylesheets/application.css.scss */
+.cover-image {
+  background-image: url("/assets/articles/curiosity_rover2.jpg");
+  height: 300px;
+  background-size: cover;
+  margin-bottom: 2pt;
+  border: 2pt solid #ebebeb;
+}
+
+/* line 65, ../../app/assets/stylesheets/application.css.scss */
+.masthead-foot {
+  font-family: 'PT Serif', serif;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 2px solid #ebebeb;
+  text-align: center;
+  padding: 3px 0;
+}
+/* line 72, ../../app/assets/stylesheets/application.css.scss */
+.masthead-foot .publish-date {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* line 81, ../../app/assets/stylesheets/application.css.scss */
+.the-independent {
+  font-family: 'old-london';
+  font-size: 84pt;
+  white-space: nowrap;
+}
+
+/* line 87, ../../app/assets/stylesheets/application.css.scss */
+.news-column {
+  text-align: justify;
+}
+/* line 90, ../../app/assets/stylesheets/application.css.scss */
+.news-column h4 {
+  /*font-family: 'Oranienbaum', serif;*/
+  /*font-family: 'PT Serif', serif;*/
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+}
+/* line 100, ../../app/assets/stylesheets/application.css.scss */
+.news-column .cascade h3 {
+  text-align: center;
+  margin: 0;
+  font-size: 28pt;
+  font-family: 'Oranienbaum', serif;
+  /*font-family: 'PT Serif', serif;*/
+  /*font-family: 'EB Garamond', serif;*/
+  /*font-family: 'Old Standard TT', serif;*/
+  /*font-family: 'Alike', serif;*/
+  font-family: 'Lovers Quarrel', cursive;
+  font-weight: 600;
+  font-style: italic;
+  font-family: 'Oranienbaum', serif;
+  font-family: 'PT Serif', serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'EB Garamond', serif;
+  /*font-family: 'Old Standard TT', serif;*/
+  /*font-family: 'Alike', serif;*/
+  /*font-family: 'Crimson Text', serif;*/
+  /*font-family: 'Arapey', serif;*/
+}
+/* line 121, ../../app/assets/stylesheets/application.css.scss */
+.news-column .cascade h3:first-child {
+  text-align: left;
+}
+/* line 124, ../../app/assets/stylesheets/application.css.scss */
+.news-column .cascade h3:last-child {
+  text-align: right;
+}
+/* line 130, ../../app/assets/stylesheets/application.css.scss */
+.news-column h5 {
+  font-weight: 600;
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+  font-size: 14pt;
+  line-height: 1.3em;
+}
+/* line 138, ../../app/assets/stylesheets/application.css.scss */
+.news-column p {
+  text-indent: 1pc;
+  margin-bottom: 2pt;
+}
+/* line 143, ../../app/assets/stylesheets/application.css.scss */
+.news-column .caption {
+  display: block;
+  margin: 8pt 0;
+  /*font-family: 'PT Serif', serif;*/
+  font-size: 11pt;
+  font-weight: 400;
+}
+/* line 150, ../../app/assets/stylesheets/application.css.scss */
+.news-column .caption hr.short-hr {
+  margin-top: 8pt;
+  margin-bottom: 8pt;
+}
+
+/* line 159, ../../app/assets/stylesheets/application.css.scss */
+.by-line {
+  font-family: 'PT Serif', serif;
+  font-weight: 600;
+  margin: 5pt 0;
+  display: block;
+  text-align: center;
+}
+/* line 165, ../../app/assets/stylesheets/application.css.scss */
+.by-line .author {
+  text-transform: uppercase;
+}
+
+/* line 171, ../../app/assets/stylesheets/application.css.scss */
+hr.short-hr {
+  margin-left: 50pt;
+  margin-right: 50pt;
+  width: auto;
+}
+
+/* line 177, ../../app/assets/stylesheets/application.css.scss */
+.news-column-right-border {
+  border-right: 1px solid #ebebeb;
+  padding-right: 7px;
+  margin-right: -8px;
+}
+
+/* line 183, ../../app/assets/stylesheets/application.css.scss */
+.news-column-double-rule {
+  border-top: 2px solid #ebebeb;
+  height: 2px;
+  border-bottom: 1px solid #ebebeb;
+}
