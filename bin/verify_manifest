@@ -10,8 +10,19 @@
 #
 #     verify_manifest credientials/cert.pem
 
+unless ARGV[0]
+  puts "Cert required as first argument"
+  exit
+end
+
+class String
+  def black; "\033[30m#{self}\033[0m" end
+  def red;   "\033[31m#{self}\033[0m" end
+  def green; "\033[32m#{self}\033[0m" end
+end
+
 if `openssl rsautl -verify -inkey #{ARGV[0]} -keyform PEM -in webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
-  puts "OK"
+  puts "OK".green
 else
-  puts "INVALID"
+  puts "INVALID".red
 end
