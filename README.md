@@ -15,3 +15,7 @@ WebPub
     $ openssl genrsa -des3 -out server.key 1024
 
 Create a pass phrase when promoted. For examples included here, it is password.
+
+2. Generate a CSR  http://www.akadia.com/services/ssh_test_certificate.html
+
+    $ openssl req -new -key server.key -out server.csr
