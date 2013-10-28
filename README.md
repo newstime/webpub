@@ -126,7 +126,7 @@ Signing:
 
 Verifying:
 
-    $ openssl rsautl -verify -inkey publickey.pem -keyform PEM -in signature
+    $ openssl rsautl -verify -inkey publickey.pem -keyform PEM -in signature -pubin
 
 
 Then from the comments:
@@ -137,3 +137,10 @@ owner of the private key, but beside that nothing else is being checked. So to
 actually verify the consistency of data.txt you have to regenerate the digest
 and then compare it against the ouptut of openssl rsautl -verify. –  reto Aug 21
 at 12:54
+
+Looks like can pass our cert straigt in an that works just fine
+
+    $ openssl rsautl -verify -certin -inkey independent_cert.pem -keyform PEM -in signature
+    # => SHA1(example_sitemap.xml)= 4b3471c42a26046a22e14960be271c59bd0cdbde
+
+Cool, that works out well.
