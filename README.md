@@ -102,3 +102,14 @@ We can extract the key simple by pasteing any certifcate into the ascii armoured
 BEGIN CERTIFICATE... stuff.
 
 This will output a file, that can be passed to xmlsec.
+
+### Verifiy the CERTIFICate
+
+Looks like all I have to do is pass it to openssl like this
+
+    $ openssl verify cert.pem
+
+~/Projects/webpub ★ openssl verify cert.pem
+cert.pem: /C=US/ST=CA/L=San Francisco/O=The Independent/OU=Publications/CN=*.theindependent.com/emailAddress=blake@theindependent.com
+error 18 at 0 depth lookup:self signed certificate
+OK
