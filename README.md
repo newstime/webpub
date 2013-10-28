@@ -162,3 +162,12 @@ http://localhost:3001/
 
 You can also specif the output, but this will output it to the local directory.
 Pretty cool. One way to get the site mirrored down.
+
+## Creating, signing and verifying manifest
+
+~/Projects/webpub master⚡ ★ cd test
+~/Projects/webpub/test master⚡ ★ ../bin/create_manifest https://theindependent.com/2013/10/24
+~/Projects/webpub/test master⚡ ★ ../bin/sign_manifest ../credentials/key.pem
+Enter pass phrase for ../credentials/key.pem:
+~/Projects/webpub/test master⚡ ★ ../bin/verify_manifest ../credentials/cert.pem
+OK

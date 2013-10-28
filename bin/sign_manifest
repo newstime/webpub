@@ -10,4 +10,4 @@
 #
 #     sign_manifest credientials/key.pem
 
-exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0]} -keyform PEM > signature"
+exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0]} -keyform PEM > webpub.signature"

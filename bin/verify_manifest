@@ -1,0 +1,17 @@
+#! /usr/bin/env ruby
+
+# This signs the xml sitemap file with the provide key.
+#
+# Usage
+#
+#     verify_manigest <cert>
+#
+# Example
+#
+#     verify_manifest credientials/cert.pem
+
+if `openssl rsautl -verify -inkey #{ARGV[0]} -keyform PEM -in webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
+  puts "OK"
+else
+  puts "INVALID"
+end

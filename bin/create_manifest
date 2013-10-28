@@ -23,6 +23,11 @@ begin
   manifest.puts ""
 
   Dir["**/*"].select(&File.method(:file?)).each do |f|
+
+    # Ignore webpub manifest and signature files
+    next if f == "webpub.manifest"
+    next if f == "webpub.signature"
+
     sha1 = Digest::SHA1.hexdigest File.read(f)
     manifest.puts "#{f}\t#{sha1}"
     # Make sure it's not the manifest file.
