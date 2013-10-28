@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publication>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+        <loc>http://www.example.com/</loc>
+        <lastmod>2005-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+   </urlset>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+     <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+       <Reference URI="">
+        <Transforms>
+         <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </Transforms>
+         <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+          <DigestValue>INy7048xB6B3mOyP2NcaZ+uliH4=</DigestValue>
+       </Reference>
+    </SignedInfo>
+    <SignatureValue>J7fGLTPuhgWY28SyhJbZCqE4EQ6rPcLLcBXJooeYQ43qlLsjY9dua2gOU7l9M4A9
+yRT75YuiFKDfKpp3m0cBlBYjc5KA+smiGMYJ88tt+63Shg88WshWDsIxEqW6crNM
+f5SuNc8ZnyeA0+XToC4RR5nQsSoqI61eFCDcTuF1fAY=</SignatureValue>
+    <KeyInfo>
+    </KeyInfo>
+   </Signature>
+</publication>

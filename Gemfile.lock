@@ -6,9 +6,13 @@ GEM
       mini_portile (~> 0.5.0)
     signer (1.1.1)
       nokogiri (>= 1.5.1)
+    xml_signature (0.1)
+      xmlcanonicalizer
+    xmlcanonicalizer (0.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   signer
+  xml_signature

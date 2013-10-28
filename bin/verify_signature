@@ -1,0 +1,17 @@
+#! /usr/bin/env ruby
+
+# This signs the xml sitemap file with the provide key.
+#
+# Usage
+#
+#     verify_signature <sitemap.xml> <certificate> <private_key>
+#
+# Example
+#
+#     verify_signature sitemap.xml cert.pem
+
+require 'xml_signature'
+
+foo = REXML::Document.new(File.read(ARGV[0]))
+expected_certificate = OpenSSL::X509::Certificate.new(File.read(ARGV[1]))
+puts XMLSignature.new(foo).verify(expected_certificate)
