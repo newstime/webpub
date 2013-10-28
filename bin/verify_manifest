@@ -10,10 +10,21 @@
 #
 #     verify_manifest credientials/cert.pem
 
-unless ARGV[0]
-  puts "Cert required as first argument"
-  exit
+require "toml"
+
+def find_config(path, name)
+  if File.exists?("#{path}/#{name}")
+    "#{path}/#{name}"
+  else
+    return if path.empty?
+    segments = path.split("/")
+    segments.pop
+    find_config(segments.join("/"), name)
+  end
 end
+
+config_path = find_config(Dir.pwd, '.webpub')
+config = TOML::Parser.new(File.read(config_path)).parsed if config_path
 
 class String
   def black; "\033[30m#{self}\033[0m" end
@@ -21,7 +32,7 @@ class String
   def green; "\033[32m#{self}\033[0m" end
 end
 
-if `openssl rsautl -verify -inkey #{ARGV[0]} -keyform PEM -in webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
+if `openssl rsautl -verify -inkey #{ARGV[0] || config["cert"]} -keyform PEM -in webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
   puts "OK".green
 else
   puts "INVALID".red
