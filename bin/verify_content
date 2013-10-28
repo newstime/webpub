@@ -11,6 +11,12 @@
 
 require 'digest/sha1'
 
+class String
+  def black; "\033[30m#{self}\033[0m" end
+  def red;   "\033[31m#{self}\033[0m" end
+  def green; "\033[32m#{self}\033[0m" end
+end
+
 begin
   manifest = File.new("webpub.manifest", "r")
 
@@ -20,7 +26,7 @@ begin
   while (line = manifest.gets)
     path, expected = line.strip.split "\t"
     actual = Digest::SHA1.hexdigest File.read(path)
-    puts "#{expected == actual ? "OK" : "INVAID"}\t#{path}"
+    puts "#{expected == actual ? "OK".green : "INVAID".red}\t#{path}"
   end
 
 
