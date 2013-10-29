@@ -33,4 +33,4 @@ end
 config_path = find_config(Dir.pwd, '.webpub')
 config = TOML::Parser.new(File.read(config_path)).parsed if config_path
 
-exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0] || config["key"]} -keyform PEM > webpub.signature"
+exec "openssl dgst -sha256 webpub.manifest | openssl rsautl -sign -inkey #{ARGV[0] || config["key"]} -keyform PEM | base64 > webpub.signature"
