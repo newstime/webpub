@@ -11,6 +11,7 @@
 #     verify_manifest credientials/cert.pem
 
 require "toml"
+require "tmpdir"
 
 def find_config(path, name)
   if File.exists?("#{path}/#{name}")
@@ -32,8 +33,12 @@ class String
   def green; "\033[32m#{self}\033[0m" end
 end
 
-if `openssl rsautl -verify -inkey #{ARGV[0] || config["cert"]} -keyform PEM -in webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
-  puts "OK".green
-else
-  puts "INVALID".red
+
+Dir.mktmpdir do |dir|
+  `cat "webpub.signature" | base64 --decode > "#{dir}/webpub.signature"`
+  if `openssl rsautl -verify -inkey #{ARGV[0] || config["cert"]} -keyform PEM -in #{dir}/webpub.signature -certin` == `openssl dgst -sha256 webpub.manifest`
+    puts "OK".green
+  else
+    puts "INVALID".red
+  end
 end
